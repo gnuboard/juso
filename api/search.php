@@ -115,7 +115,7 @@ if ($res === false) {
         echo ' '.$addr2;
         if($link != 'false')
             echo '</a>';
-        echo '(지번주소) '.$addr_ji;
+        echo '<div>(지번주소) '.$addr_ji.'</div>';
         echo '</li>'.PHP_EOL;
     }
 
