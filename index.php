@@ -6,14 +6,14 @@ include_once(G5_PATH.'/head.sub.php');
 
 <section>
     <h1>SIR 주소 검색</h1>
+    <p>
+        시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
+        만약 검색결과에 찾으시는 주소가 없을 때는 시도와 시군구를 선택하신 후 다시 검색해 주십시오.<br>
+        (검색결과는 최대 1,000건만 표시됩니다.)
+    </p>
     <form name="fjuso" method="get" onsubmit="search_call(); return false;" autocomplete="off">
     <div>
-        <label for="q">검색어</label>
-        <input type="text" name="q" id="q" required>
-        <input type="submit" value="검색">
-    </div>
-    <div>
-        <label for="sido">시도선택</label>
+        <label for="sido" class="sound_only">시도선택</label>
         <select name="sido" id="sido">
             <option value="">- 시도 선택 -</option>
             <option value="서울특별시">서울</option>
@@ -33,18 +33,17 @@ include_once(G5_PATH.'/head.sub.php');
             <option value="충청남도">충남</option>
             <option value="충청북도">충북</option>
         </select>
-        <label for="gugun">시군구</label>
+        <label for="gugun" class="sound_only">시군구</label>
         <select name="gugun" id="gugun">
             <option value="">- 시군구 선택 -</option>
         </select>
+        <div>
+            <label for="q" class="sound_only">검색어</label>
+            <input type="text" name="q" id="q" required>
+            <input type="submit" value="검색">
+        </div>
     </div>
     </form>
-
-    <p>
-    시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
-    검색결과는 최대 1,000건만 표시됩니다. 만약 검색결과에 찾으시는 주소가 없을 때는<br>
-    시도와 시군구를 선택하신 후 다시 검색해 주십시오.
-    </p>
 </section>
 
 <section>

@@ -63,7 +63,7 @@ if ($res === false) {
     ob_start();
 ?>
 
-<p>검색결과 : <?php echo number_format($total_count); ?>건</p>
+<div>검색결과 : <?php echo number_format($total_count); ?>건</div>
 
 <?php
     for($i=0; $i<$count; $i++) {
@@ -112,12 +112,9 @@ if ($res === false) {
             echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr2).'\', \''.trim($addr_ji).'\'); return false;">';
         echo $zipcode;
         echo ' '.$addr1;
-        echo '  '.$addr2;
+        echo ' '.$addr2;
         if($link != 'false')
             echo '</a>';
-        echo '</li>'.PHP_EOL;
-
-        echo '<li>';
         echo '(지번주소) '.$addr_ji;
         echo '</li>'.PHP_EOL;
     }
@@ -125,7 +122,7 @@ if ($res === false) {
     if($i > 0)
         echo '</ul>';
     else
-        echo '<p>검색결과가 없습니다.</p>';
+        echo '<div>검색결과가 없습니다.</div>';
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
