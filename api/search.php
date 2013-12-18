@@ -63,7 +63,7 @@ if ($res === false) {
     ob_start();
 ?>
 
-<div>검색결과 : <?php echo number_format($total_count); ?>건</div>
+<div class="result_msg">검색결과 : <?php echo number_format($total_count); ?>건</div>
 
 <?php
     for($i=0; $i<$count; $i++) {
@@ -122,7 +122,7 @@ if ($res === false) {
     if($i > 0)
         echo '</ul>';
     else
-        echo '<div>검색결과가 없습니다.</div>';
+        echo '<div class="result_msg">검색결과가 없습니다.</div>';
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
