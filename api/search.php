@@ -122,7 +122,7 @@ if ($res === false) {
     if($i > 0)
         echo '</ul>';
     else
-        echo '<div class="result_msg">검색결과가 없습니다.</div>';
+        echo '<div class="result_msg result_fail">검색결과가 없습니다.</div>';
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
