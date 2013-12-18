@@ -5,7 +5,7 @@ $p = parse_url($_SERVER['HTTP_REFERER']);
 $host = $p['host'];
 
 $q = strip_tags($q);
-$q = preg_replace('/[[:punct:]]/u', '', $q); // 특수문자 제거
+//$q = preg_replace('/[[:punct:]]/u', '', $q); // 특수문자 제거
 
 $tmp = array();
 if($sido)
