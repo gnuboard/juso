@@ -96,7 +96,7 @@ define('G5_TIME_HIS',       substr(G5_TIME_YMDHIS, 11, 8));
 /********************
    테이블 변수
 ********************/
-$config['dorocode_table']       = 'dorocode';
+$config['dorocode_table']       = 'dorodata';
 $config['search_log_table']     = 'search_log';
 $config['search_count_table']   = 'search_count';
 
@@ -108,7 +108,7 @@ $config['cf_title'] = 'SIR 도로명주소검색';
 // sphinx 검색엔진 정보
 $config['cf_sphinx_host']       = 'localhost';
 $config['cf_sphinx_port']       = 9312;
-$config['cf_sphinx_index']      = 'dorocode';
+$config['cf_sphinx_index']      = 'dorodata';
 
 $config['cf_api_dir']           = 'api';
 

@@ -30,9 +30,17 @@ if($sido)
 if($gugun)
     $query .= ' @gugun "'.$gugun.'" ';
 
-//$field = '(doroname,geonbon,geonbu,geonname,geonsangse,beopname,eupmyeon,ri,jibon,jibu)';
+$sword = explode(' ', trim($q));
+
 $field = '(doro,jibeon)';
-$query .= ' @'.$field.' "'.$q.'" ';
+
+foreach($sword as $val) {
+    $word = trim($val);
+    if(!$word)
+        continue;
+
+    $query .= ' @'.$field.' "'.$word.'*" ';
+}
 
 $res = $cl->Query ( $query, $index );
 
@@ -77,9 +85,9 @@ if ($res === false) {
         $addr_ji = $data['sido'].' '.$data['gugun'];
         if($data['beopname'])
             $addr_ji .= ' '.$data['beopname'];
-        if($data['eupmyeon'])
-            $addr_ji .= ' '.$data['eupmyeon'];
-        $addr_ji .=' '.$data['jibon'];
+        if($data['ri'])
+            $addr_ji .= ' '.$data['ri'];
+        $addr_ji .= ' '.$data['jibon'];
         if($data['jibu'])
             $addr_ji .= '-'.$data['jibu'];
 
