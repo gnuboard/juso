@@ -31,6 +31,7 @@ if (G5_IS_MOBILE) {
 <link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/default.css">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
+<script src="<?php echo G5_JS_URL ?>/respond.min.js"></script>
 <![endif]-->
 <script>
 // 자바스크립트에서 사용하는 전역변수 선언

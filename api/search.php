@@ -48,7 +48,7 @@ if ($res === false) {
     ob_start();
 ?>
 
-<div class="result_msg">검색결과 : <?php echo number_format($total_count); ?>건</div>
+<div class="result_msg">검색결과 <b><?php echo number_format($total_count); ?></b></div>
 
 <?php
     for($i=0; $i<$count; $i++) {
@@ -93,9 +93,10 @@ if ($res === false) {
         if($i == 0)
             echo '<ul>'.PHP_EOL;
         echo '<li>'.PHP_EOL;
+        echo '<span></span>';
         if($link != 'false')
             echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr2).'\', \''.trim($addr_ji).'\'); return false;">';
-        echo $zipcode;
+        echo '<strong>'.$zipcode.'</strong>';
         echo ' '.$addr1;
         echo ' '.$addr2;
         if($link != 'false')
@@ -111,6 +112,7 @@ if ($res === false) {
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
+    if ($is_mobile) $config['cf_list_pages'] = 5;
     $pagelist = get_paging($config['cf_list_pages'], $page, $total_page);
     echo $pagelist;
 

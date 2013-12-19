@@ -3,11 +3,10 @@
 
 /* 초기화 */
 html {overflow-y:scroll}
-body {margin:0;padding:0}
+body {margin:0;padding:0;background:#e6e8ec;font-size:0.875em}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:dotum}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
-#hd ul, nav ul, #ft ul {margin:0;padding:0;list-style:none}
 legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
 label, input, button, select, img {vertical-align:middle}
 input, button {margin:0;padding:0;font-family:dotum;font-size:1em}
@@ -21,3 +20,89 @@ a:link, a:visited {color:#000;text-decoration:none}
 a:hover, a:focus, a:active {color:#000;text-decoration:underline}
 
 h1 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
+
+header {background:#fff;zoom:1}
+header:after {display:block;visibility:hidden;clear:both;content:""}
+
+#logo {float:left}
+#logo a {display:block;color:#656E7A;text-decoration:none}
+#logo img {margin:0 10px 0 0}
+
+#search {float:left;zoom:1}
+#search:after {display:block;visibility:hidden;clear:both;content:""}
+
+.search-select-wrp {float:left;margin:0 1px 0 0;letter-spacing:-4px}
+.search-select {display:inline-block;height:40px;border-radius:10px;background:#e6ebf2 url('../img/ico-arw-down.png') no-repeat;vertical-align:middle;overflow:hidden}
+.search-select:focus, .search-select:hover {background-color:#ff62a1;background-image:url('../img/ico-arw-down2.png')}
+.search-select select {padding:11px 8px;margin:0;width:100%;border:none;background:transparent;background-image:none;box-shadow:none;-webkit-appearance:none}
+.search-select:focus select, .search-select:hover select {color:#fff}
+.search-select option {color:#000}
+
+.search-qwrp {float:left}
+.search-q {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:2em}
+
+#search-submit {position:relative;left:-5px}
+
+#result .result_b4 {display:block;padding:30px;text-align:center}
+#result .result_msg {margin:0 0 10px}
+#result ul {margin:0;padding:0;list-style:none}
+#result li {position:relative;margin:0 0 1px;padding:10px 10px 10px 60px;background:#fff;font-weight:bold;line-height:1.4em}
+#result li span {position:absolute;top:20px;left:19px;width:22px;height:26px;background:url('../img/ico-marker.png')}
+#result li strong {font-weight:normal}
+#result li div {color:#8e9eb3;font-size:0.75em;font-weight:normal}
+
+/* pagination */
+.pg_wrap {clear:both;margin:0 0 20px;padding-top:20px;text-align:center}
+.pg {display:inline-block;letter-spacing:-4px}
+.pg a:focus, .pg a:hover, .pg a:active {text-decoration:none}
+.pg_page, .pg_current {display:inline-block;padding:0 12px;height:40px;color:#000;letter-spacing:0;line-height:3em;vertical-align:middle}
+.pg_page {background:#fff;text-decoration:none}
+.pg_current {background:#ff62a1;color:#fff}
+
+.sir_sr {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
+
+@media all and (max-width:532px) {
+#logo a span {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
+.search-select {width:105px;background-position:85px 16px}
+}
+
+@media all and (min-width:321px) and (max-width:767px) {
+.search-qwrp {position:relative}
+.search-qwrp span {z-index:0;position:absolute;top:10px;right:20px;width:16%;height:40px;background:#e6ebf2}
+}
+
+@media all and (min-width:533px) {
+.search-select {width:150px;background-position:125px 16px}
+}
+
+@media all and (max-width:767px) {
+header {padding:20px}
+
+#logo {float:none}
+
+#search {float:none}
+
+.search-select-wrp {position:absolute;top:10px;right:18px;float:none;letter-spacing:-3px}
+.search-select {margin:5px 0}
+
+.search-qwrp {position:relative;float:none;padding:10px 0 0}
+.search-q {z-index:2;width:80%}
+
+#search-submit {z-index:3;position:absolute;top:10px;left:auto;right:0}
+
+#container {padding:20px}
+
+footer {padding:10px 20px}
+}
+
+@media all and (min-width:768px) {
+header {padding:20px 20px}
+
+#logo {padding:3px 30px 0 0}
+
+.search-q {width:150px}
+
+#container {padding:20px 20px}
+
+footer {padding:10px 20px}
+}

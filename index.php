@@ -5,47 +5,66 @@ include_once(G5_PATH.'/head.sub.php');
 
 <h1>SIR 도로명 주소 검색</h1>
 
-<form name="fjuso" method="get" onsubmit="search_call(); return false;" autocomplete="off">
-<div>
-    <label for="sido" class="sound_only">시도선택</label>
-    <select name="sido" id="sido">
-        <option value="">- 시도 선택 -</option>
-        <option value="서울특별시">서울</option>
-        <option value="부산광역시">부산</option>
-        <option value="대구광역시">대구</option>
-        <option value="인천광역시">인천</option>
-        <option value="광주광역시">광주</option>
-        <option value="대전광역시">대전</option>
-        <option value="울산광역시">울산</option>
-        <option value="강원도">강원</option>
-        <option value="경기도">경기</option>
-        <option value="경상남도">경남</option>
-        <option value="경상북도">경북</option>
-        <option value="전라남도">전남</option>
-        <option value="전라북도">전북</option>
-        <option value="제주특별자치도">제주</option>
-        <option value="충청남도">충남</option>
-        <option value="충청북도">충북</option>
-    </select>
-    <label for="gugun" class="sound_only">시군구</label>
-    <select name="gugun" id="gugun">
-        <option value="">- 시군구 선택 -</option>
-    </select>
-    <div>
-        <label for="q" class="sound_only">검색어</label>
-        <input type="text" name="q" id="q" required>
-        <input type="submit" value="검색">
+<header>
+    <div id="logo">
+        <a href="<?php echo G5_URL; ?>/"><img src="<?php echo G5_URL; ?>/img/logo.png" alt="SIR"><span>도로명주소검색</span></a>
     </div>
+
+    <div id="search">
+        <form name="fjuso" method="get" onsubmit="search_call(); return false;" autocomplete="off">
+        <div class="search-select-wrp">
+            <label for="sido" class="sir_sr">시도선택</label>
+            <span class="search-select">
+                <select name="sido" id="sido">
+                    <option value="">시도 선택</option>
+                    <option value="서울특별시">서울</option>
+                    <option value="부산광역시">부산</option>
+                    <option value="대구광역시">대구</option>
+                    <option value="인천광역시">인천</option>
+                    <option value="광주광역시">광주</option>
+                    <option value="대전광역시">대전</option>
+                    <option value="울산광역시">울산</option>
+                    <option value="강원도">강원</option>
+                    <option value="경기도">경기</option>
+                    <option value="경상남도">경남</option>
+                    <option value="경상북도">경북</option>
+                    <option value="전라남도">전남</option>
+                    <option value="전라북도">전북</option>
+                    <option value="제주특별자치도">제주</option>
+                    <option value="충청남도">충남</option>
+                    <option value="충청북도">충북</option>
+                </select>
+            </span>
+            <label for="gugun" class="sir_sr">시군구</label>
+            <span class="search-select">
+                <select name="gugun" id="gugun">
+                    <option value="">시군구 선택</option>
+                </select>
+            </span>
+        </div>
+        <div class="search-qwrp">
+            <label for="q" class="sir_sr">검색어</label>
+            <input type="text" name="q" id="q" class="search-q">
+            <input type="image" src="<?php echo G5_URL; ?>/img/btn-sch.png" alt="검색" id="search-submit">
+            <span></span>
+        </div>
+        </form>
+    </div>
+</header>
+
+<div id="container">
+
+    <div id="result"><span class="result_b4">도로명, 읍/면/동, 건물명 등을 입력해주십시오.</span></div>
+
 </div>
-</form>
 
-<div id="result"></div>
-
+<footer>
 <p>
     시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
     만약 검색결과에 찾으시는 주소가 없을 때는 시도와 시군구를 선택하신 후 다시 검색해 주십시오.<br>
     (검색결과는 최대 1,000건만 표시됩니다.)
 </p>
+</footer>
 
 <script>
 $(function() {
@@ -86,7 +105,7 @@ function search_call(page)
 
     $.ajax({
         type: "POST",
-        url: "http://juso.sir.co.kr/search.php",
+        url: "search.php",
         async: false,
         dataType: "jsonp",
         jsonp: "callback",
