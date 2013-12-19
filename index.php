@@ -7,7 +7,7 @@ include_once(G5_PATH.'/head.sub.php');
 
 <header>
     <div id="logo">
-        <a href="<?php echo G5_URL; ?>/"><img src="<?php echo G5_URL; ?>/img/logo.png" alt="SIR"><span>도로명주소검색</span></a>
+        <a href="<?php echo G5_URL; ?>/"><img src="<?php echo G5_URL; ?>/img/logo.png" alt="SIR"><span>주소검색</span></a>
     </div>
 
     <div id="search">
@@ -61,6 +61,7 @@ include_once(G5_PATH.'/head.sub.php');
 
 <footer>
 <p>
+    <strong>그누보드5와 영카트5에 기본탑재됩니다.</strong><br>
     시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
     만약 검색결과에 찾으시는 주소가 없을 때는 시도와 시군구를 선택하신 후 다시 검색해 주십시오.<br>
     (검색결과는 최대 1,000건만 표시됩니다.)
