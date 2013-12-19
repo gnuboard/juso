@@ -105,7 +105,7 @@ function search_call(page)
 
     $.ajax({
         type: "POST",
-        url: "search.php",
+        url: "http://juso.sir.co.kr/search.php",
         async: false,
         dataType: "jsonp",
         jsonp: "callback",

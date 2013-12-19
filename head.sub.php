@@ -28,7 +28,7 @@ if (G5_IS_MOBILE) {
 }
 ?>
 <title><?php echo $g5_head_title; ?></title>
-<link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/default.css">
+<link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/default.css?v=1">
 <!--[if lte IE 8]>
 <script src="<?php echo G5_JS_URL ?>/html5.js"></script>
 <script src="<?php echo G5_JS_URL ?>/respond.min.js"></script>
