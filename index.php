@@ -33,6 +33,7 @@ include_once(G5_PATH.'/head.sub.php');
                     <option value="제주특별자치도">제주</option>
                     <option value="충청남도">충남</option>
                     <option value="충청북도">충북</option>
+                    <option value="세종특별자치시">세종</option>
                 </select>
             </span>
             <label for="gugun" class="sir_sr">시군구</label>
@@ -60,7 +61,6 @@ include_once(G5_PATH.'/head.sub.php');
 
 <footer>
 <p>
-    <strong>그누보드5와 영카트5에 기본탑재됩니다.</strong><br>
     시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
     만약 검색결과에 찾으시는 주소가 없을 때는 시도와 시군구를 선택하신 후 다시 검색해 주십시오.<br>
     (검색결과는 최대 1,000건만 표시됩니다.)
@@ -91,7 +91,7 @@ function gugun_make(sido)
     sojae = sojaeji[sido].split(",");
     gugun.options.length = sojae.length+1;
     for (i=0; i<sojae.length; i++) {
-        gugun.options[i+1].value = sojae[i];
+        gugun.options[i+1].value = (sojae[i] == "없음") ? "" : sojae[i];
         gugun.options[i+1].text = sojae[i];
     }
 }
@@ -149,6 +149,7 @@ sojaeji['전라북도']   = '고창군,군산시,김제시,남원시,무주군,�
 sojaeji['제주특별자치도'] = '남제주군,북제주군,서귀포시,제주시';
 sojaeji['충청남도']   = '계룡시,공주시,금산군,논산시,당진군,보령시,부여군,서산시,서천군,아산시,연기군,예산군,천안시,청양군,태안군,홍성군';
 sojaeji['충청북도']   = '괴산군,단양군,보은군,영동군,옥천군,음성군,제천시,증평군,진천군,청원군,청주시 상당구,청주시 흥덕구,충주시';
+sojaeji['세종특별자치시'] = '없음';
 </script>
 
 <?php
