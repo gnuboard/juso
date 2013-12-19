@@ -59,7 +59,7 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 .pg_page {background:#fff;text-decoration:none}
 .pg_current {background:#ff62a1;color:#fff}
 
-.sir_sr {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
+.sir_sr, .sound_only {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
 
 @media all and (max-width:532px) {
 #logo a span {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
