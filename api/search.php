@@ -30,24 +30,9 @@ if($sido)
 if($gugun)
     $query .= ' @gugun "'.$gugun.'" ';
 
-$sw = explode(' ', str_replace('-', ' ', trim($q)));
-
-$stx = array();
-foreach($sw as $word) {
-    $word = trim($word);
-
-    if(!$word)
-        continue;
-
-    $stx[] = $word;
-}
-
 //$field = '(doroname,geonbon,geonbu,geonname,geonsangse,beopname,eupmyeon,ri,jibon,jibu)';
-$field = 'addr';
-foreach($stx as $val)
-{
-    $query .= ' @'.$field.' "*'.$val.'*" ';
-}
+$field = '(doro,jibeon)';
+$query .= ' @'.$field.' "'.$q.'" ';
 
 $res = $cl->Query ( $query, $index );
 
