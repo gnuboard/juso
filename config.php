@@ -113,6 +113,7 @@ $config['cf_sphinx_index']      = 'dorodata';
 $config['cf_api_dir']           = 'api';
 
 $config['cf_list_pages']        = 10;       // 페이지 수
+$config['cf_mobile_list_pages'] = 5;        // 모바일 페이지 수
 $config['cf_page_rows']         = 10;       // 1 페이지당 리스트 수
 $config['cf_max_rows']          = 1000;     // 검색 결과 최대 값
 ?>

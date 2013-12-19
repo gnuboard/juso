@@ -121,7 +121,7 @@ if ($res === false) {
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
     if ($is_mobile) $config['cf_list_pages'] = 5;
-    $pagelist = get_paging($config['cf_list_pages'], $page, $total_page);
+    $pagelist = get_paging($is_mobile ? $config['cf_mobile_list_pages'] : $config['cf_list_pages'], $page, $total_page);
     echo $pagelist;
 
     $contents = ob_get_contents();
