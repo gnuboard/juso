@@ -40,7 +40,7 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 
 .search-q {position:relative;float:left}
 .search-q .q-inp {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:40px}
-.search-q .q-info {display:none;z-index:2;position:absolute;top:43px;left:0;padding:10px;border-radius:10px;background:#2e99fc;color:#fff}
+.search-q .q-info {display:none;z-index:2;position:absolute;left:0;padding:10px;border-radius:10px;background:#2e99fc;color:#fff}
 .search-q .q-info span {position:absolute;top:-6px;left:10px;width:11px;height:6px;background:url('../img/ico-arw-up.gif')}
 
 #q-submit {position:relative;left:-5px}
@@ -57,7 +57,7 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 .pg_wrap {clear:both;margin:0 0 20px;padding-top:20px;text-align:center}
 .pg {display:inline-block;letter-spacing:-4px}
 .pg a:focus, .pg a:hover, .pg a:active {text-decoration:none}
-.pg_page, .pg_current {display:inline-block;padding:0 12px;height:40px;color:#000;letter-spacing:0;line-height:3em;vertical-align:middle}
+.pg_page, .pg_current {display:inline-block;padding:0 12px;height:40px;color:#000;font-weight:normal;vertical-align:middle;letter-spacing:0;line-height:3em}
 .pg_page {background:#fff;text-decoration:none}
 .pg_current {background:#ff62a1;color:#fff}
 
@@ -89,6 +89,7 @@ header {padding:20px}
 
 .search-q {float:none;padding:10px 0 0}
 .search-q .q-inp {z-index:2;width:80%}
+.search-q .q-info {top:52px}
 
 #q-submit {z-index:3;position:absolute;top:10px;left:auto;right:0}
 
@@ -103,6 +104,7 @@ header {padding:20px 20px}
 #logo {padding:3px 30px 0 0}
 
 .search-q .q-inp {width:150px}
+.search-q .q-info {top:43px}
 
 #container {padding:20px 20px}
 
