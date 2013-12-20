@@ -53,6 +53,11 @@ if ($res === false) {
 
     $count = count($res['matches']);
 
+    if($_GET['link'] != 'false')
+        $link = false;
+    else
+        $link = true;
+
     ob_start();
 ?>
 
@@ -102,12 +107,12 @@ if ($res === false) {
             echo '<ul>'.PHP_EOL;
         echo '<li>'.PHP_EOL;
         echo '<span></span>';
-        if($link != 'false')
+        if($link)
             echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr2).'\', \''.trim($addr_ji).'\'); return false;">';
         echo '<strong>'.$zipcode.'</strong>';
         echo ' '.$addr1;
         echo ' '.$addr2;
-        if($link != 'false')
+        if($link)
             echo '</a>';
         echo '<div>(지번주소) '.$addr_ji.'</div>';
         echo '</li>'.PHP_EOL;
@@ -120,7 +125,6 @@ if ($res === false) {
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
-    if ($is_mobile) $config['cf_list_pages'] = 5;
     $pagelist = get_paging($is_mobile ? $config['cf_mobile_list_pages'] : $config['cf_list_pages'], $page, $total_page);
     echo $pagelist;
 

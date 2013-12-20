@@ -205,6 +205,12 @@ if ($is_admin != 'super') {
 }
 
 
+// get으로 넘어온 변수 필터링
+$sido = escape_trim(preg_replace('/[[:punct:]]/u', '', $_GET['sido']));
+$gugun = escape_trim(preg_replace('/[[:punct:]]/u', '', $_GET['gugun']));
+$q = escape_trim(preg_replace ("/[ #\&\+%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", strip_tags($_GET['q'])));
+
+
 // 자바스크립트에서 go(-1) 함수를 쓰면 폼값이 사라질때 해당 폼의 상단에 사용하면
 // 캐쉬의 내용을 가져옴. 완전한지는 검증되지 않음
 header('Content-Type: text/html; charset=utf-8');
