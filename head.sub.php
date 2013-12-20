@@ -28,7 +28,7 @@ if (G5_IS_MOBILE) {
 }
 ?>
 <title><?php echo $g5_head_title; ?></title>
-<link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/default.css?v=1">
+<link rel="stylesheet" href="<?php echo G5_CSS_URL; ?>/default.css?v=2">
 <link rel="shortcut icon" href="<?php echo G5_URL; ?>/favicon.ico" type="image/x-icon">
 <link rel="icon" href="<?php echo G5_URL; ?>/favicon.ico" type="image/x-icon">
 <!--[if lte IE 8]>
