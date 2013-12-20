@@ -32,16 +32,18 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 #search:after {display:block;visibility:hidden;clear:both;content:""}
 
 .search-select-wrp {float:left;margin:0 1px 0 0;letter-spacing:-4px}
-.search-select {display:inline-block;height:40px;border-radius:10px;background:#e6ebf2 url('../img/ico-arw-down.png') no-repeat;vertical-align:middle;overflow:hidden}
-.search-select:focus, .search-select:hover {background-color:#ff62a1;background-image:url('../img/ico-arw-down2.png')}
+.search-select {display:inline-block;height:40px;border-radius:10px;background:#e6ebf2 url('../img/ico-arw-down.gif') no-repeat;vertical-align:middle;overflow:hidden}
+.search-select:focus, .search-select:hover {background-color:#ff62a1;background-image:url('../img/ico-arw-down2.gif')}
 .search-select select {padding:11px 8px;margin:0;width:100%;border:none;background:transparent;background-image:none;box-shadow:none;-webkit-appearance:none}
 .search-select:focus select, .search-select:hover select {color:#fff}
 .search-select option {color:#000}
 
-.search-qwrp {float:left}
-.search-q {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:2em}
+.search-q {position:relative;float:left}
+.search-q .q-inp {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:2em}
+.search-q .q-info {position:absolute;top:43px;left:0;padding:10px;border-radius:10px;background:#2e99fc;color:#fff}
+.search-q .q-info span {position:absolute;top:-6px;left:10px;width:11px;height:6px;background:url('../img/ico-arw-up.gif')}
 
-#search-submit {position:relative;left:-5px}
+#q-submit {position:relative;left:-5px}
 
 #result .result_b4 {display:block;padding:30px;text-align:center}
 #result .result_msg {margin:0 0 10px}
@@ -49,7 +51,7 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 #result li {position:relative;margin:0 0 1px;padding:10px 10px 10px 60px;background:#fff;font-weight:bold;line-height:1.4em}
 #result li span {position:absolute;top:20px;left:19px;width:22px;height:26px;background:url('../img/ico-marker.png')}
 #result li strong {font-weight:normal}
-#result li div {color:#8e9eb3;font-size:0.75em;font-weight:normal}
+#result li div {color:#8e9eb3;font-size:0.94em;font-weight:normal}
 
 /* pagination */
 .pg_wrap {clear:both;margin:0 0 20px;padding-top:20px;text-align:center}
@@ -67,8 +69,8 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 }
 
 @media all and (min-width:321px) and (max-width:767px) {
-.search-qwrp {position:relative}
-.search-qwrp span {z-index:0;position:absolute;top:10px;right:20px;width:16%;height:40px;background:#e6ebf2}
+.search-q {}
+.search-q .q-bg {z-index:0;position:absolute;top:10px;right:20px;width:16%;height:40px;background:#e6ebf2}
 }
 
 @media all and (min-width:533px) {
@@ -85,10 +87,10 @@ header {padding:20px}
 .search-select-wrp {position:absolute;top:10px;right:18px;float:none;letter-spacing:-3px}
 .search-select {margin:5px 0}
 
-.search-qwrp {position:relative;float:none;padding:10px 0 0}
-.search-q {z-index:2;width:80%}
+.search-q {float:none;padding:10px 0 0}
+.search-q .q-inp {z-index:2;width:80%}
 
-#search-submit {z-index:3;position:absolute;top:10px;left:auto;right:0}
+#q-submit {z-index:3;position:absolute;top:10px;left:auto;right:0}
 
 #container {padding:20px}
 
@@ -100,7 +102,7 @@ header {padding:20px 20px}
 
 #logo {padding:3px 30px 0 0}
 
-.search-q {width:150px}
+.search-q .q-inp {width:150px}
 
 #container {padding:20px 20px}
 
