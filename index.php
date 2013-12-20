@@ -44,11 +44,11 @@ include_once(G5_PATH.'/head.sub.php');
             </span>
         </div>
         <div class="search-q">
+            <div class="q-info"><span></span>안내문을 이곳에 삽입합니다.</div>
             <label for="q" class="sir_sr">검색어</label>
             <input type="text" name="q" id="q" class="q-inp">
             <input type="image" src="<?php echo G5_URL; ?>/img/btn-sch.png" alt="검색" id="q-submit">
             <span class="q-bg"></span>
-            <div class="q-info"><span></span>안내문을 이곳에 삽입합니다.</div>
         </div>
         </form>
     </div>
