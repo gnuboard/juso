@@ -43,11 +43,12 @@ include_once(G5_PATH.'/head.sub.php');
                 </select>
             </span>
         </div>
-        <div class="search-qwrp">
+        <div class="search-q">
+            <div class="q-info"><span></span>안내문을 이곳에 삽입합니다.</div>
             <label for="q" class="sir_sr">검색어</label>
-            <input type="text" name="q" id="q" class="search-q">
-            <input type="image" src="<?php echo G5_URL; ?>/img/btn-sch.png" alt="검색" id="search-submit">
-            <span></span>
+            <input type="text" name="q" id="q" class="q-inp">
+            <input type="image" src="<?php echo G5_URL; ?>/img/btn-sch.png" alt="검색" id="q-submit">
+            <span class="q-bg"></span>
         </div>
         </form>
     </div>
@@ -61,7 +62,7 @@ include_once(G5_PATH.'/head.sub.php');
 
 <footer>
 <p>
-    <strong>그누보드5와 영카트5에 기본탑재됩니다.</strong><br>
+    <strong>그누보드와 영카트에 기본탑재됩니다. 디자인도 입맛대로 바꾸실 수 있습니다.</strong><br>
     시도 및 시군구 선택없이 도로명, 읍/면/동, 건물명 등으로 검색하실 수 있습니다.<br>
     만약 검색결과에 찾으시는 주소가 없을 때는 시도와 시군구를 선택하신 후 다시 검색해 주십시오.<br>
     (검색결과는 최대 1,000건만 표시됩니다.)
