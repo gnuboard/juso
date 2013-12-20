@@ -77,6 +77,19 @@ $(function() {
         gugun_make(sido);
     });
 
+    <?php if($is_mobile) { ?>
+    var msg_alert = true;
+    $("input#q").bind("focusin", function() {
+        if(!msg_alert)
+            return false;
+
+        var msg = $(".q-info").html().replace(/<br>/g, "\n").replace("<span></span>", "");
+        if(msg_alert) {
+            alert(msg);
+            msg_alert = false;
+        }
+    });
+    <?php } else { ?>
     $("input#q").bind("focusin", function() {
         $(".q-info").fadeIn(200);
     });
@@ -84,6 +97,7 @@ $(function() {
     $("input#q").bind("focusout", function() {
         $(".q-info").fadeOut(200);
     });
+    <?php } ?>
 });
 
 function gugun_make(sido)
