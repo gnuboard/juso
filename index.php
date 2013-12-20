@@ -3,7 +3,7 @@ include_once('./_common.php');
 include_once(G5_PATH.'/head.sub.php');
 ?>
 
-<h1>SIR 도로명 주소 검색</h1>
+<h1><?php echo $config['cf_title']; ?></h1>
 
 <header>
     <div id="logo">
