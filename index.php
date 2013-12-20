@@ -127,6 +127,12 @@ function search_call(page)
     var sido = $("#sido").val();
     var gugun = $("#gugun").val();
     var q = $.trim($("#q").val());
+
+    if(q.length < 1) {
+        alert('검색어를 입력해 주십시오.');
+        return false;
+    }
+
     if(!page)
         page = 1;
 
