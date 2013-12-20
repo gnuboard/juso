@@ -44,7 +44,7 @@ include_once(G5_PATH.'/head.sub.php');
             </span>
         </div>
         <div class="search-q">
-            <div class="q-info"><span></span>안내문을 이곳에 삽입합니다.</div>
+            <div class="q-info"><span></span>정확하고 빠른 검색을 위해 아래의 예시처럼 입력해 주세요.<br><br>입력예1) 강남대로37길 24-6<br>입력예2) 서초동 1362-19<br>입력예3) 서초2동 1362-19</div>
             <label for="q" class="sir_sr">검색어</label>
             <input type="text" name="q" id="q" class="q-inp">
             <input type="image" src="<?php echo G5_URL; ?>/img/btn-sch.png" alt="검색" id="q-submit">
@@ -56,7 +56,7 @@ include_once(G5_PATH.'/head.sub.php');
 
 <div id="container">
 
-    <div id="result"><span class="result_b4">도로명, 읍/면/동, 건물명 등을 입력해주십시오.</span></div>
+    <div id="result"></div>
 
 </div>
 
@@ -71,10 +71,18 @@ include_once(G5_PATH.'/head.sub.php');
 
 <script>
 $(function() {
-    $("#sido").on("change", function() {
+    $("#sido").bind("change", function() {
         var sido = $(this).val();
 
         gugun_make(sido);
+    });
+
+    $("input#q").bind("focusin", function() {
+        $(".q-info").fadeIn(200);
+    });
+
+    $("input#q").bind("focusout", function() {
+        $(".q-info").fadeOut(200);
     });
 });
 
@@ -100,6 +108,8 @@ function gugun_make(sido)
 
 function search_call(page)
 {
+    $(".q-info").fadeOut(200);
+
     var sido = $("#sido").val();
     var gugun = $("#gugun").val();
     var q = $.trim($("#q").val());

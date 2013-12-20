@@ -39,8 +39,8 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 .search-select option {color:#000}
 
 .search-q {position:relative;float:left}
-.search-q .q-inp {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:2em}
-.search-q .q-info {position:absolute;top:43px;left:0;padding:10px;border-radius:10px;background:#2e99fc;color:#fff}
+.search-q .q-inp {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:40px}
+.search-q .q-info {display:none;z-index:2;position:absolute;top:43px;left:0;padding:10px;border-radius:10px;background:#2e99fc;color:#fff}
 .search-q .q-info span {position:absolute;top:-6px;left:10px;width:11px;height:6px;background:url('../img/ico-arw-up.gif')}
 
 #q-submit {position:relative;left:-5px}
