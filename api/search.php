@@ -61,9 +61,9 @@ if ($res === false) {
     $count = count($res['matches']);
 
     if($_GET['link'] != 'false')
-        $link = false;
-    else
         $link = true;
+    else
+        $link = false;
 
     ob_start();
 ?>
