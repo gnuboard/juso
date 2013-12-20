@@ -80,11 +80,10 @@ $(function() {
     <?php if($is_mobile) { ?>
     var msg_alert = true;
     $("input#q").bind("focusin", function() {
-        if(!msg_alert)
+        if(!msg_alert) {
             return false;
-
-        var msg = $(".q-info").html().replace(/<br>/g, "\n").replace("<span></span>", "");
-        if(msg_alert) {
+        } else {
+            var msg = $(".q-info").html().replace(/<br>/g, "\n").replace("<span></span>", "");
             alert(msg);
             msg_alert = false;
         }
