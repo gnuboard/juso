@@ -147,6 +147,9 @@ if ($res === false) {
     ob_end_clean();
 }
 
+// 방문자수의 접속을 남김
+include_once(G5_PATH.'/log_insert.php');
+
 $jusu = array();
 $juso['error'] = $error;
 $juso['juso'] = $contents;
