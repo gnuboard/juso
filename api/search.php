@@ -1,6 +1,13 @@
 <?php
 include_once('./_common.php');
 
+if(!$q) {
+    $juso['error'] = '검색어를 입력해 주십시오.';
+
+    echo $_GET['callback'].'('.json_encode($juso).')';
+    exit;
+}
+
 // spninx api load
 require ( G5_LIB_PATH.'/sphinx/sphinxapi.php' );
 
@@ -54,9 +61,9 @@ if ($res === false) {
     $count = count($res['matches']);
 
     if($_GET['link'] != 'false')
-        $link = false;
-    else
         $link = true;
+    else
+        $link = false;
 
     ob_start();
 ?>

@@ -103,7 +103,7 @@ $config['search_count_table']   = 'search_count';
 /********************
    기타 변수
 ********************/
-$config['cf_title'] = 'SIR 도로명주소검색';
+$config['cf_title'] = 'SIR 주소검색';
 
 // sphinx 검색엔진 정보
 $config['cf_sphinx_host']       = 'localhost';
