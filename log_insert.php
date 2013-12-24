@@ -13,7 +13,7 @@ $exec_time = $res['time'];
 
 // 검색 로그 기록
 $sql = " insert into {$config['search_log_table']}
-            set sl_host      = '$host',
+            set sl_host      = '$remote_host',
                 sl_date      = '".G5_TIME_YMD."',
                 sl_time      = '".G5_TIME_HIS."',
                 sl_word      = '$word',
