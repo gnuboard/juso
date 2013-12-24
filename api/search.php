@@ -8,6 +8,11 @@ if(!$q) {
     exit;
 }
 
+$charset = strtolower(str_replace('-', '', $charset));
+if($charset == 'euckr') {
+    $q = iconv_utf8($q);
+}
+
 // spninx api load
 require ( G5_LIB_PATH.'/sphinx/sphinxapi.php' );
 
