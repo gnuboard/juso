@@ -1,11 +1,6 @@
 <?php
 include_once('./_common.php');
 
-$p = parse_url($_SERVER['HTTP_REFERER']);
-$host = $p['host'];
-
-$q = strip_tags($q);
-
 $tmp = array();
 if($sido)
     $tmp[] = $sido;
@@ -14,6 +9,7 @@ if($gugun)
 $tmp[] = $q;
 
 $word = implode(',', $tmp);
+$exec_time = $res['time'];
 
 // 검색 로그 기록
 $sql = " insert into {$config['search_log_table']}

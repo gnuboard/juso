@@ -1,6 +1,9 @@
 <?php
 include_once('./_common.php');
 
+$p = parse_url($_SERVER['HTTP_REFERER']);
+$host = $p['host'];
+
 if(!$q) {
     $juso['error'] = '검색어를 입력해 주십시오.';
 
