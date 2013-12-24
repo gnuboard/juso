@@ -46,7 +46,7 @@ function get_paging($write_pages, $cur_page, $total_page)
     }
 
     if ($str)
-        return '<nav class="pg_wrap"><span class="pg">'.$str.'</span></nav>';
+        return '<div class="pg_wrap"><span class="pg">'.$str.'</span></div>';
     else
         return '';
 }
