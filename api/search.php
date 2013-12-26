@@ -13,6 +13,12 @@ if(!$q) {
 
 $charset = strtolower(str_replace('-', '', $charset));
 if($charset == 'euckr') {
+    if($sido)
+        $sido = iconv_utf8($sido);
+
+    if($gugun)
+        $gugun = iconv_utf8($gugun);
+
     $q = iconv_utf8($q);
 }
 
