@@ -56,7 +56,7 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 
 /* pagination */
 .pg_wrap {clear:both;margin:0 0 20px;padding-top:20px;text-align:center}
-.pg {display:inline-block;letter-spacing:-4px}
+.pg {display:inline-block}
 .pg a:focus, .pg a:hover, .pg a:active {text-decoration:none}
 .pg_page, .pg_current {display:inline-block;padding:0 12px;height:40px;color:#000;font-weight:normal;vertical-align:middle;letter-spacing:0;line-height:3em}
 .pg_page {background:#fff;text-decoration:none}
