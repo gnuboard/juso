@@ -85,17 +85,24 @@ if ($res === false) {
         $addr1 .= ' '.$data['geonbon'];
         if($data['geonbu'])
             $addr1 .= '-'.$data['geonbu'];
-        if($data['beopname'])
-            $addr1 .= ' ('.$data['beopname'];
+
+        $comma = '';
+        $addr3 = '';
+        if($data['beopname']) {
+            if($data['geonname'] || $data['geonsangse'])
+                $comma = ',';
+
+            $addr3 = ' ('.$data['beopname'];
+        }
         if($data['geonname'] || $data['geonsangse'])
-            $addr1 .= ',';
+            $addr3 .= ',';
         if($data['geonname']) {
-            $addr1 .= ' '.$data['geonname'];
+            $addr3 .= ' '.$data['geonname'];
         } else {
             if($data['geonsangse'])
-                $addr1 .= ' '.$data['geonsangse'];
+                $addr3 .= ' '.$data['geonsangse'];
         }
-        $addr1 .= ')';
+        $addr3 .= ')';
 
         $addr_ji = $data['sido'].' '.$data['gugun'];
         if($data['beopname'])
@@ -118,10 +125,10 @@ if ($res === false) {
         echo '<li>'.PHP_EOL;
         echo '<span></span>';
         if($link)
-            echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr2).'\', \''.trim($addr_ji).'\'); return false;">';
+            echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr3).'\', \''.trim($addr_ji).'\'); return false;">';
         echo '<strong>'.$zipcode.'</strong>';
         echo ' '.$addr1;
-        echo ' '.$addr2;
+        echo $addr3;
         if($link)
             echo '</a>';
         echo '<div>(지번주소) '.$addr_ji.'</div>';
