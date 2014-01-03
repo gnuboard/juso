@@ -123,8 +123,20 @@ function search_call(page)
     if(!page)
         page = 1;
 
-    $.getJSON("http://juso.sir.co.kr/search.php?sido="+sido+"&gugun="+gugun+"&page="+page+"&link=false&q="+q+"&callback=?",
-        function(data) {
+    $.ajax({
+        type: "POST",
+        url: "http://juso.sir.co.kr/search.php",
+        async: false,
+        dataType: "jsonp",
+        jsonp: "callback",
+        data: {
+            "sido": sido,
+            "gugun": gugun,
+            "page": page,
+            "q": q,
+            "link": "false"
+        },
+        success:function(data) {
             $("#result").empty();
 
             if(data.error) {
@@ -134,7 +146,7 @@ function search_call(page)
 
             $("#result").html(data.juso);
         }
-    );
+    });
 }
 
 var sido = new Array(
