@@ -31,12 +31,13 @@ header:after {display:block;visibility:hidden;clear:both;content:""}
 #search {float:left;zoom:1}
 #search:after {display:block;visibility:hidden;clear:both;content:""}
 
-.search-select-wrp {float:left;margin:0 1px 0 0;letter-spacing:-4px}
-.search-select {display:inline-block;height:40px;border-radius:10px;background:#e6ebf2 url('../img/ico-arw-down.gif') no-repeat;vertical-align:middle;overflow:hidden}
-.search-select:focus, .search-select:hover {background-color:#ff62a1;background-image:url('../img/ico-arw-down2.gif')}
-.search-select select {padding:11px 8px;margin:0;width:100%;border:none;background:transparent;background-image:none;box-shadow:none;-webkit-appearance:none}
-.search-select:focus select, .search-select:hover select {color:#fff}
-.search-select option {color:#000}
+.search-select-wrp {float:left;margin:0 1px 0 0;padding:10px 3px 0 8px;height:30px;border-radius:10px;background:#e6ebf2;letter-spacing:-4px}
+.search-select-wrp select {margin:0 5px 0 0}
+/*.search-select {display:inline-block;height:40px;border-radius:10px;background:#e6ebf2 url('../img/ico-arw-down.gif') no-repeat;vertical-align:middle;overflow:hidden}*/
+/*.search-select:focus, .search-select:hover {background-color:#ff62a1;background-image:url('../img/ico-arw-down2.gif')}*/
+/*.search-select select {display:block;padding:11px 8px;margin:0;width:120%;border:none;background:transparent;background-image:none;box-shadow:none;-webkit-appearance:none}*/
+/*.search-select:focus select, .search-select:hover select {color:#fff}*/
+/*.search-select option {color:#000}*/
 
 .search-q {position:relative;float:left}
 .search-q .q-inp {padding:0 5px;height:40px;border:0;border-top-left-radius:10px;border-bottom-left-radius:10px;background:#e6ebf2;line-height:40px}
