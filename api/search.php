@@ -1,6 +1,9 @@
 <?php
 include_once('./_common.php');
 
+$p = parse_url($_SERVER['HTTP_REFERER']);
+$remote_host = $p['host'];
+
 if(!$q) {
     $juso['error'] = '검색어를 입력해 주십시오.';
 
@@ -138,6 +141,9 @@ if ($res === false) {
     $contents = ob_get_contents();
     ob_end_clean();
 }
+
+// 방문자수의 접속을 남김
+include_once(G5_PATH.'/log_insert.php');
 
 $jusu = array();
 $juso['error'] = $error;

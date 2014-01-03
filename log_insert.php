@@ -1,11 +1,6 @@
 <?php
 include_once('./_common.php');
 
-$p = parse_url($_SERVER['HTTP_REFERER']);
-$host = $p['host'];
-
-$q = strip_tags($q);
-
 $tmp = array();
 if($sido)
     $tmp[] = $sido;
@@ -14,15 +9,17 @@ if($gugun)
 $tmp[] = $q;
 
 $word = implode(',', $tmp);
+$exec_time = $res['time'];
 
 // 검색 로그 기록
 $sql = " insert into {$config['search_log_table']}
-            set sl_host     = '$host',
-                sl_date     = '".G5_TIME_YMD."',
-                sl_time     = '".G5_TIME_HIS."',
-                sl_word     = '$word',
-                sl_ip       = '{$_SERVER['REMOTE_ADDR']}',
-                sl_referer  = '{$_SERVER['HTTP_REFERER']}' ";
+            set sl_host      = '$remote_host',
+                sl_date      = '".G5_TIME_YMD."',
+                sl_time      = '".G5_TIME_HIS."',
+                sl_word      = '$word',
+                sl_ip        = '{$_SERVER['REMOTE_ADDR']}',
+                sl_referer   = '{$_SERVER['HTTP_REFERER']}',
+                sl_exec_time = '$exec_time' ";
 sql_query($sql, false);
 
 // 검색 카운트 기록

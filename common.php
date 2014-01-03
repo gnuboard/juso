@@ -206,9 +206,20 @@ if ($is_admin != 'super') {
 
 
 // get으로 넘어온 변수 필터링
-$sido = escape_trim(preg_replace('/[[:punct:]]/u', '', $_GET['sido']));
-$gugun = escape_trim(preg_replace('/[[:punct:]]/u', '', $_GET['gugun']));
-$q = escape_trim(preg_replace("/[#\&\+%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", strip_tags($_GET['q'])));
+$charset = strtolower(str_replace('-', '', $_GET['charset']));
+if($charset == 'euckr') {
+    if($_GET['sido'])
+        $sido = iconv_utf8($_GET['sido']);
+
+    if($_GET['gugun'])
+        $gugun = iconv_utf8($_GET['gugun']);
+
+    $q = iconv_utf8($_GET['q']);
+}
+
+$sido = escape_trim(preg_replace('/[[:punct:]]/u', '', $sido));
+$gugun = escape_trim(preg_replace('/[[:punct:]]/u', '', $gugun));
+$q = escape_trim(preg_replace("/[#\&\+%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", strip_tags($q)));
 
 
 // 자바스크립트에서 go(-1) 함수를 쓰면 폼값이 사라질때 해당 폼의 상단에 사용하면
