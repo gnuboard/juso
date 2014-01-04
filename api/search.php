@@ -82,7 +82,11 @@ if ($res === false) {
         $zip1 = $zip[0];
         $zip2 = $zip[1];
         $addr1 = $data['sido'].' '.$data['gugun'].' '.$data['doroname'];
-        $addr1 .= ' '.$data['geonbon'];
+        if($data['jiha'])
+            $jiha = ' 지하';
+        else
+            $jiha = ' ';
+        $addr1 .= $jiha.$data['geonbon'];
         if($data['geonbu'])
             $addr1 .= '-'.$data['geonbu'];
 
@@ -109,7 +113,11 @@ if ($res === false) {
             $addr_ji .= ' '.$data['beopname'];
         if($data['ri'])
             $addr_ji .= ' '.$data['ri'];
-        $addr_ji .= ' '.$data['jibon'];
+        if($data['san'])
+            $san = ' 산';
+        else
+            $san = ' ';
+        $addr_ji .= $san.$data['jibon'];
         if($data['jibu'])
             $addr_ji .= '-'.$data['jibu'];
 
