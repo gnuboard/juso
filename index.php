@@ -124,7 +124,7 @@ function search_call(page)
         page = 1;
 
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "<?php echo G5_URL; ?>/search.php",
         async: false,
         dataType: "jsonp",
