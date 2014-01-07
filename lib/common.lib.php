@@ -51,6 +51,42 @@ function get_paging($write_pages, $cur_page, $total_page)
         return '';
 }
 
+// 현재페이지, 총페이지수, 한페이지에 보여줄 행
+function get_paging2($write_pages, $cur_page, $total_page)
+{
+    $str = '';
+    if ($cur_page > 1) {
+        $str .= '<a href="#" onclick="zipcode_call(1); return false;" class="pg_page pg_start">처음</a>'.PHP_EOL;
+    }
+
+    $start_page = ( ( (int)( ($cur_page - 1 ) / $write_pages ) ) * $write_pages ) + 1;
+    $end_page = $start_page + $write_pages - 1;
+
+    if ($end_page >= $total_page) $end_page = $total_page;
+
+    if ($start_page > 1) $str .= '<a href="#" onclick="zipcode_call('.($start_page-1).'); return false;" class="pg_page pg_prev">이전</a>'.PHP_EOL;
+
+    if ($total_page > 1) {
+        for ($k=$start_page;$k<=$end_page;$k++) {
+            if ($cur_page != $k)
+                $str .= '<a href="#" onclick="zipcode_call('.$k.'); return false;" class="pg_page">'.$k.'<span class="sound_only">페이지</span></a>'.PHP_EOL;
+            else
+                $str .= '<span class="sound_only">열린</span><strong class="pg_current">'.$k.'</strong><span class="sound_only">페이지</span>'.PHP_EOL;
+        }
+    }
+
+    if ($total_page > $end_page) $str .= '<a href="#" onclick="zipcode_call('.($end_page+1).'); return false;" class="pg_page pg_next">다음</a>'.PHP_EOL;
+
+    if ($cur_page < $total_page) {
+        $str .= '<a href="#" onclick="zipcode_call('.$total_page.'); return false;" class="pg_page pg_end">맨끝</a>'.PHP_EOL;
+    }
+
+    if ($str)
+        return '<div class="pg_wrap"><span class="pg">'.$str.'</span></div>';
+    else
+        return '';
+}
+
 // 변수 또는 배열의 이름과 값을 얻어냄. print_r() 함수의 변형
 function print_r2($var)
 {

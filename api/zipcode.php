@@ -4,12 +4,16 @@ include_once('./_common.php');
 $p = parse_url($_SERVER['HTTP_REFERER']);
 $remote_host = $p['host'];
 
-if(!$q) {
-    $juso['error'] = '검색어를 입력해 주십시오.';
+if(!$sido) {
+    $juso['error'] = '시도를 선택해 주십시오.';
 
     echo $_GET['callback'].'('.json_encode($juso).')';
     exit;
 }
+
+$sort = preg_replace('/[^a-z]/', '', strtolower($_GET['sort']));
+if($sort != 'asc' && $sort != 'desc')
+    $sort = 'asc';
 
 // spninx api load
 require ( G5_LIB_PATH.'/sphinx/sphinxapi.php' );
@@ -26,6 +30,7 @@ $cl->SetConnectTimeout ( 1 );
 $cl->SetArrayResult ( true );
 $cl->SetWeights ( array ( 100, 1 ) );
 $cl->SetMatchMode ( SPH_MATCH_EXTENDED );
+$cl->SetGroupBy ( 'zipcode', SPH_GROUPBY_ATTR, 'zipcode '.$sort );
 //$cl->setSortMode( SPH_SORT_ATTR_ASC, 'sn' );
 
 if ($page == '') $page = 1;
@@ -39,18 +44,6 @@ if($sido)
 
 if($gugun)
     $query .= ' @gugun "'.$gugun.'" ';
-
-$sword = explode(' ', trim($q));
-
-$field = '(doro,jibeon)';
-
-foreach($sword as $val) {
-    $word = trim($val);
-    if(!$word)
-        continue;
-
-    $query .= ' @'.$field.' "'.$word.'*" ';
-}
 
 $res = $cl->Query ( $query, $index );
 
@@ -78,9 +71,6 @@ if ($res === false) {
         $data = $res['matches'][$i]['attrs'];
 
         $zipcode = preg_replace('/([0-9]{3})([0-9]{3})/', '\\1-\\2', $data['zipcode']);
-        $zip = explode('-', $zipcode);
-        $zip1 = $zip[0];
-        $zip2 = $zip[1];
         $addr1 = $data['sido'].' '.$data['gugun'].' '.$data['doroname'];
         if($data['jiha'])
             $jiha = ' 지하';
@@ -133,7 +123,7 @@ if ($res === false) {
         echo '<li>'.PHP_EOL;
         echo '<span></span>';
         if($link)
-            echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr3).'\', \''.trim($addr_ji).'\'); return false;">';
+            echo '<a href="#" onclick="put_data(\''.$zipcode.'\'); return false;">';
         echo '<strong>'.$zipcode.'</strong>';
         echo ' '.$addr1;
         echo $addr3;
@@ -150,7 +140,7 @@ if ($res === false) {
 
     //echo '<p>실행시간 : '.$res['time'].'</p>';
 
-    $pagelist = get_paging($is_mobile ? $config['cf_mobile_list_pages'] : $config['cf_list_pages'], $page, $total_page);
+    $pagelist = get_paging2($is_mobile ? $config['cf_mobile_list_pages'] : $config['cf_list_pages'], $page, $total_page);
     echo $pagelist;
 
     $contents = ob_get_contents();
@@ -158,7 +148,7 @@ if ($res === false) {
 }
 
 // 방문자수의 접속을 남김
-$sl_type = 'address';
+$sl_type = 'zipcode';
 include_once(G5_PATH.'/log_insert.php');
 
 $jusu = array();
