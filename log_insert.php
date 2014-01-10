@@ -1,5 +1,5 @@
 <?php
-include_once('./_common.php');
+if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 $tmp = array();
 if($sido)
@@ -15,7 +15,7 @@ $exec_time = $res['time'];
 // 검색 로그 기록
 $sql = " insert into {$config['search_log_table']}
             set sl_type      = '$sl_type',
-                sl_host      = '$remote_host',
+                sl_host      = '{$g5['remote_host']}',
                 sl_date      = '".G5_TIME_YMD."',
                 sl_time      = '".G5_TIME_HIS."',
                 sl_word      = '$word',
@@ -27,19 +27,19 @@ sql_query($sql, false);
 // 검색 카운트 기록
 $sql = " select sn
             from {$config['search_count_table']}
-            where sc_host = '$remote_host'
+            where sc_host = '{$g5['remote_host']}'
               and sc_date = '".G5_TIME_YMD."' ";
 $row = sql_fetch($sql);
 
 if($row['sn']) {
     $sql = " update {$config['search_count_table']}
                 set sc_count = sc_count + 1
-                where sc_host = '$remote_host'
+                where sc_host = '{$g5['remote_host']}'
                   and sc_date = '".G5_TIME_YMD."' ";
     sql_query($sql, false);
 } else {
     $sql = " insert into {$config['search_count_table']}
-                set sc_host     = '$remote_host',
+                set sc_host     = '{$g5['remote_host']}',
                     sc_date     = '".G5_TIME_YMD."',
                     sc_count    = '1' ";
     sql_query($sql, false);

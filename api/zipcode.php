@@ -1,9 +1,6 @@
 <?php
 include_once('./_common.php');
 
-$p = parse_url($_SERVER['HTTP_REFERER']);
-$remote_host = $p['host'];
-
 if(!$sido) {
     $juso['error'] = '시도를 선택해 주십시오.';
 

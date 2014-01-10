@@ -2441,4 +2441,15 @@ if (!function_exists("get_sock")) {
         return $buffer;
     }
 }
+
+// 에러메세지를 jsonp 타입으로 출력하고 종료
+function die_jsonp($msg)
+{
+    if(trim($msg)) {
+        $error = array();
+        $error['error'] = $msg;
+
+        die($_GET['callback'].'('.json_encode($error).')');
+    }
+}
 ?>

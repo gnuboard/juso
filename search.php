@@ -1,6 +1,9 @@
 <?php
 include_once('./_common.php');
 
+// 접근금지 host 체크
+require(G5_PATH.'/block_host_check.php');
+
 // get으로 넘어온 변수 필터링
 $charset = strtolower(str_replace('-', '', $_GET['charset']));
 if($charset == 'euckr') {
