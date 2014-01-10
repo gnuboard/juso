@@ -27,7 +27,7 @@ sql_query($sql, false);
 // 검색 카운트 기록
 $sql = " select sn
             from {$config['search_count_table']}
-            where sc_host = '$host'
+            where sc_host = '$remote_host'
               and sc_date = '".G5_TIME_YMD."' ";
 $row = sql_fetch($sql);
 
