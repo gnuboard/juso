@@ -34,12 +34,12 @@ $row = sql_fetch($sql);
 if($row['sn']) {
     $sql = " update {$config['search_count_table']}
                 set sc_count = sc_count + 1
-                where sc_host = '$host'
+                where sc_host = '$remote_host'
                   and sc_date = '".G5_TIME_YMD."' ";
     sql_query($sql, false);
 } else {
     $sql = " insert into {$config['search_count_table']}
-                set sc_host     = '$host',
+                set sc_host     = '$remote_host',
                     sc_date     = '".G5_TIME_YMD."',
                     sc_count    = '1' ";
     sql_query($sql, false);
