@@ -74,11 +74,17 @@ if ($res === false) {
     for($i=0; $i<$count; $i++) {
         $data = $res['matches'][$i]['attrs'];
 
+        $eupmyeon = false;
         $zipcode = preg_replace('/([0-9]{3})([0-9]{3})/', '\\1-\\2', $data['zipcode']);
         $zip = explode('-', $zipcode);
         $zip1 = $zip[0];
         $zip2 = $zip[1];
-        $addr1 = $data['sido'].' '.$data['gugun'].' '.$data['doroname'];
+        $addr1 = $data['sido'].' '.$data['gugun'];
+        if($data['beopname'] && preg_match('/(읍|면)$/', $data['beopname'])) {
+            $addr1 .= ' '.$data['beopname'];
+            $eupmyeon = true;
+        }
+        $addr1 .= ' '.$data['doroname'];
         if($data['jiha'])
             $jiha = ' 지하';
         else
@@ -87,23 +93,23 @@ if ($res === false) {
         if($data['geonbu'])
             $addr1 .= '-'.$data['geonbu'];
 
-        $comma = '';
         $addr3 = '';
-        if($data['beopname']) {
-            if($data['geonname'] || $data['geonsangse'])
-                $comma = ',';
-
+        if($data['beopname'] && !$eupmyeon)
             $addr3 = ' ('.$data['beopname'];
+        if($data['geonname'] || $data['geonsangse']) {
+            if($addr3)
+                $addr3 .= ', ';
+            else
+                $addr3 = '(';
         }
-        if($data['geonname'] || $data['geonsangse'])
-            $addr3 .= ',';
         if($data['geonname']) {
-            $addr3 .= ' '.$data['geonname'];
+            $addr3 .= $data['geonname'];
         } else {
             if($data['geonsangse'])
-                $addr3 .= ' '.$data['geonsangse'];
+                $addr3 .= $data['geonsangse'];
         }
-        $addr3 .= ')';
+        if($addr3)
+            $addr3 .= ')';
 
         $addr_ji = $data['sido'].' '.$data['gugun'];
         if($data['beopname'])
