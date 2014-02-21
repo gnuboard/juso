@@ -107,6 +107,19 @@ if ($res === false) {
         } else {
             if($data['geonsangse'])
                 $addr3 .= $data['geonsangse'];
+            else {
+                if($data['daryang'] && !$data['geonname2']) {
+                    if($addr3)
+                        $addr3 .= ', '.$data['daryang'];
+                    else
+                        $addr3 .= '('.$data['daryang'];
+                } else if(!$data['daryang'] && $data['geonname2']) {
+                    if($addr3)
+                        $addr3 .= ', '.$data['geonname2'];
+                    else
+                        $addr3 .= '('.$data['geonname2'];
+                }
+            }
         }
         if($addr3)
             $addr3 .= ')';
