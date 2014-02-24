@@ -100,7 +100,7 @@ if ($res === false) {
             if($addr3)
                 $addr3 .= ', ';
             else
-                $addr3 = '(';
+                $addr3 = ' (';
         }
         if($data['geonname']) {
             $addr3 .= $data['geonname'];
@@ -112,12 +112,12 @@ if ($res === false) {
                     if($addr3)
                         $addr3 .= ', '.$data['daryang'];
                     else
-                        $addr3 .= '('.$data['daryang'];
+                        $addr3 .= ' ('.$data['daryang'];
                 } else if(!$data['daryang'] && $data['geonname2']) {
                     if($addr3)
                         $addr3 .= ', '.$data['geonname2'];
                     else
-                        $addr3 .= '('.$data['geonname2'];
+                        $addr3 .= ' ('.$data['geonname2'];
                 }
             }
         }
