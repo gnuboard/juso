@@ -144,12 +144,15 @@ if ($res === false) {
                 $addr_ji .= ' '.$data['geonsangse'];
         }
 
+        $addr3 = htmlentities($addr3, ENT_QUOTES, "UTF-8");
+        $addr_ji = htmlentities($addr_ji, ENT_QUOTES, "UTF-8");
+
         if($i == 0)
             echo '<ul>'.PHP_EOL;
         echo '<li>'.PHP_EOL;
         echo '<span></span>';
         if($link)
-            echo '<a href="#" onclick="put_data(\''.$zip1.'\', \''.$zip2.'\', \''.trim($addr1).'\', \''.trim($addr3).'\', \''.trim($addr_ji).'\'); return false;">';
+            echo "<a href='#' onclick='put_data(\"".$zip1."\", \"".$zip2."\", \"".trim($addr1)."\", \"".trim($addr3)."\", \"".trim($addr_ji)."\"); return false;'>";
         echo '<strong>'.$zipcode.'</strong>';
         echo ' '.$addr1;
         echo $addr3;
