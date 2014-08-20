@@ -68,7 +68,10 @@ if ($res === false) {
     ob_start();
 ?>
 
-<div class="result_msg">검색결과 <b><?php echo number_format($total_count); ?></b></div>
+<div class="result_msg">
+    검색결과 <b><?php echo number_format($total_count); ?></b><br>
+    <strong style="color:red">SIR 주소검색 서비스는 2014년 10월 31일 17시까지만 운영됩니다.</strong>
+</div>
 
 <?php
     for($i=0; $i<$count; $i++) {
