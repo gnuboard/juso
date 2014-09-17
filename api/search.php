@@ -70,7 +70,7 @@ if ($res === false) {
 
 <div class="result_msg">
     검색결과 <b><?php echo number_format($total_count); ?></b><br>
-    <strong style="color:red">SIR 주소검색 서비스는 2014년 10월 31일 17시까지만 운영됩니다.</strong>
+    <strong style="color:red;font-size:16px">SIR 주소검색 서비스는 2014년 10월 31일 17시까지만 운영됩니다.</strong>
 </div>
 
 <?php
