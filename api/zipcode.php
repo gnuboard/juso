@@ -160,7 +160,7 @@ if ($res === false) {
 $sl_type = 'zipcode';
 include_once(G5_PATH.'/log_insert.php');
 
-$jusu = array();
+$juso = array();
 $juso['error'] = $error;
 $juso['juso'] = $contents;
 

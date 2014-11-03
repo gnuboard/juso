@@ -1,4 +1,5 @@
 <?php
+/*
 include_once('./_common.php');
 
 // 접근금지 host 체크
@@ -18,4 +19,7 @@ $sido = escape_trim(preg_replace('/[[:punct:]]/u', '', $sido));
 $gugun = escape_trim(preg_replace('/[[:punct:]]/u', '', $gugun));
 
 include_once('./'.$config['cf_api_dir'].'/zipcode.php');
+*/
+
+include_once('./api/juso_end.php');
 ?>

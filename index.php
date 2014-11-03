@@ -4,7 +4,15 @@ include_once(G5_PATH.'/head.sub.php');
 ?>
 
 <h1><?php echo $config['cf_title']; ?></h1>
+<div>
+    <strong style="color:red;font-size:16px">SIR 주소검색 서비스가 2014년 10월 31일 종료됐습니다.</strong>
+    <p>
+        다른 도로명 주소검색 서비스로 변경하는 방법은 다음 공지를 참고하시기 바랍니다.<br>
+        <a href="http://sir.co.kr/bbs/board.php?bo_table=co_notice&wr_id=1165" target="_blank">http://sir.co.kr/bbs/board.php?bo_table=co_notice&wr_id=1165</a>
+    </p>
+</div>
 
+<?php /*
 <header>
     <div id="logo">
         <a href="<?php echo G5_URL; ?>/"><img src="<?php echo G5_URL; ?>/img/logo.png" alt="SIR"><span>주소검색</span></a>
@@ -193,5 +201,6 @@ sigungu['제주특별자치도'] = '서귀포시,제주시';
 </script>
 
 <?php
+*/
 include_once(G5_PATH.'/tail.sub.php');
 ?>

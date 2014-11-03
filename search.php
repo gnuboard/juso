@@ -1,4 +1,5 @@
 <?php
+/*
 include_once('./_common.php');
 
 // 접근금지 host 체크
@@ -21,4 +22,7 @@ $gugun = escape_trim(preg_replace('/[[:punct:]]/u', '', $gugun));
 $q = escape_trim(preg_replace("/[#\&\+%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/u", "", strip_tags($q)));
 
 include_once('./'.$config['cf_api_dir'].'/search.php');
+*/
+
+include_once('./api/juso_end.php');
 ?>
