@@ -118,5 +118,5 @@ $config['cf_page_rows']         = 10;       // 1 페이지당 리스트 수
 $config['cf_max_rows']          = 1000;     // 검색 결과 최대 값
 
 // 접근금지 host ,로 구분
-$config['blocked_host'] = 'segiexpress.com';
+$config['blocked_host'] = '';
 ?>
